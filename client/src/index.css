@@ -1,0 +1,326 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: 4px;
+}
+
+.page-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.room-card {
+  width: min(1100px, 100%);
+}
+
+.room-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.side-panel {
+  border-right: 1px solid #eee;
+  padding-right: 10px;
+}
+
+.video-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.chat-box {
+  width: 100%;
+}
+
+.chat-messages {
+  height: 180px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.reactions-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.reactions-layer {
+  min-height: 24px;
+}
+
+.reaction-float {
+  font-size: 24px;
+  margin: 0 6px;
+}
+
+
+/* Horizontal room controls panel */
+.room-controls-panel {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.room-controls-panel h3 {
+  margin-bottom: 12px;
+}
+
+.room-controls-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.room-control-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.room-control-label input[type="number"] {
+  width: 65px;
+}
+
+.room-video-input {
+  width: 180px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Subtle default-style button hover */
+.room-controls-panel button,
+.control-access-panel button,
+.control-request-action button,
+.control-request-form button {
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.room-controls-panel button:hover:not(:disabled),
+.control-access-panel button:hover:not(:disabled),
+.control-request-action button:hover:not(:disabled),
+.control-request-form button:hover:not(:disabled) {
+  background-color: #e8e8e8;
+  border-color: #888;
+  cursor: pointer;
+}
+
+.room-controls-panel button:disabled {
+  cursor: not-allowed;
+}
+
+/* Host access request and permission panels */
+.control-access-panel {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+}
+
+.control-access-panel h3 {
+  margin-top: 0;
+  font-size: 15px;
+}
+
+.control-request {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.control-request:last-child {
+  border-bottom: none;
+}
+
+.control-request p {
+  margin: 6px 0 2px;
+}
+
+.control-request-role {
+  margin-left: 5px;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.requested-permissions {
+  margin: 4px 0 8px;
+  padding-left: 20px;
+}
+
+.control-request-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.control-grant {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.control-grant:last-child {
+  border-bottom: none;
+}
+
+.control-grant-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin: 7px 0;
+}
+
+.control-request-action {
+  margin: 12px 0;
+}
+
+.control-request-form {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 10px;
+  max-width: 360px;
+}
+
+.control-request-form h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.permission-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 9px 0;
+  cursor: pointer;
+}
+
+.permission-option input {
+  margin: 0;
+}
+
+.control-request-form > button {
+  margin-top: 10px;
+}
+
+.control-access-notice {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+
+/* Home page: Room ID + password only */
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.home-menu {
+  width: min(440px, 100%);
+  padding: 24px;
+}
+
+.home-menu h1 {
+  margin: 0 0 26px;
+}
+
+.home-field {
+  display: block;
+  margin: 0 0 16px;
+}
+
+.home-field input {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 7px 8px;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.home-status,
+.join-waiting {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.join-waiting {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.room-heading-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.room-share-area {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.share-notice {
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  .room-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .side-panel {
+    border-right: 0;
+    border-bottom: 1px solid #eee;
+    padding-right: 0;
+    padding-bottom: 12px;
+  }
+}
